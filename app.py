@@ -16,10 +16,13 @@ def game():
     player = int(input("Enter your choice: "))
     computer = random.randint(1,3)
 
-    #Add validation that when the user enter a string or a number that is not 1, 2 or 3, the program should print an error message and ask the user to enter a valid number
-    if player != 1 and player != 2 and player != 3:
-        print("Invalid choice!")
-        game()
+    #Add validation that when the user enter a string the program should prompt the user to enter a valid number
+    while player not in [1, 2, 3]:
+        player = int(input("Invalid choice! Please enter a valid number: "))
+
+    print(f"Computer chose: {computer}")
+    print(f"You chose: {player}")
+    
 
     if player == computer:
         print("It's a tie!")
